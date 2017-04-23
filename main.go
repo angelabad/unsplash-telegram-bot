@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"net/http"
 
 	"github.com/Sirupsen/logrus"
@@ -13,6 +14,29 @@ import (
 
 var unsplashID string
 var telegramID string
+
+func parseConfig() error {
+	viper.SetConfigName("config")
+	viper.AddConfigPath(".")
+	viper.ReadInConfig()
+	//err := viper.ReadInConfig()
+	//if err != nil {
+	//	logger.Printf("Unable to open config file: %s, using env vars", err.Error())
+	//}
+	viper.SetEnvPrefix("bot")
+	viper.BindEnv("unsplashID")
+	viper.BindEnv("telegramID")
+
+	unsplashID = viper.GetString("unsplashID")
+	telegramID = viper.GetString("telegramID")
+
+	if (unsplashID == "") || (telegramID == "") {
+		return errors.New("You should use config file or environment variables")
+	}
+
+	return nil
+
+}
 
 func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.ResponseWriter, logger *logrus.Logger) {
 
@@ -81,24 +105,7 @@ func spartaLambdaData(api *sparta.API) []*sparta.LambdaAWSInfo {
 
 func main() {
 
-	// Read config
-	viper.SetConfigName("config")
-	viper.AddConfigPath(".")
-	viper.ReadInConfig()
-	//err := viper.ReadInConfig()
-	//if err != nil {
-	//	logger.Printf("Unable to open config file: %s, using env vars", err.Error())
-	//}
-	viper.SetEnvPrefix("bot")
-	viper.BindEnv("unsplashID")
-	viper.BindEnv("telegramID")
-
-	unsplashID = viper.GetString("unsplashID")
-	telegramID = viper.GetString("telegramID")
-
-	if (unsplashID == "") || (telegramID == "") {
-		panic("You should use config file or environment variables")
-	}
+	parseConfig()
 
 	stage := sparta.NewStage("prod")
 	apiGateway := sparta.NewAPIGateway("MySpartaApi", stage)

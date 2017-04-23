@@ -1,10 +1,18 @@
 package main
 
 import (
+	"log"
 	"net/url"
 	"reflect"
 	"testing"
 )
+
+func init() {
+	err := parseConfig()
+	if err != nil {
+		log.Panic("Error parsing configuration: ", err.Error())
+	}
+}
 
 func TestGetSmallImage(t *testing.T) {
 	// TODO: This is duplicate code

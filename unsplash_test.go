@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"reflect"
 	"testing"
 
@@ -8,6 +9,13 @@ import (
 )
 
 var logger = logrus.New()
+
+func init() {
+	err := parseConfig()
+	if err != nil {
+		log.Panic("Error parsing configuration: ", err.Error())
+	}
+}
 
 func TestGetRandomImage(t *testing.T) {
 	photo, err := getRandomImage(logger)
