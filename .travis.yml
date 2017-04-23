@@ -16,3 +16,4 @@ before_install:
   - export PATH=$PATH:/tmp/glide/${GLIDE_OS_ARCH}
 install:
   - glide install
+script: go test -v
