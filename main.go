@@ -73,7 +73,7 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 			logger.Panic("ERROR: ", err.Error())
 		}
 		if len(photos) == 0 {
-			logger.Info("No hay fotos")
+			logger.Info("There is no photos")
 		} else {
 			//TODO: Only get 3 images
 			for v := 0; v < len(photos); v++ {
@@ -84,7 +84,7 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 			}
 		}
 	default:
-		logger.Info("Sin comando - saliendo")
+		logger.Info("Without command - exiting")
 	}
 }
 
@@ -119,11 +119,11 @@ func main() {
 	}
 
 	stage := sparta.NewStage("prod")
-	apiGateway := sparta.NewAPIGateway("MySpartaApi", stage)
+	apiGateway := sparta.NewAPIGateway("UnsplashTelegramBot", stage)
 
-	stackName := "SpartaApplication"
+	stackName := "UnsplashTelegramBot"
 	sparta.Main(stackName,
-		"Simple Sparta Application",
+		"Unsplash Telegram Bot",
 		spartaLambdaData(apiGateway),
 		apiGateway,
 		nil)
