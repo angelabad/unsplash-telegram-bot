@@ -3,9 +3,11 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"log"
 	"net/http"
 
 	"github.com/Sirupsen/logrus"
+	gocf "github.com/crewjam/go-cloudformation"
 	sparta "github.com/mweagle/Sparta"
 	"github.com/spf13/viper"
 	"github.com/tidwall/gjson"
@@ -87,9 +89,15 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 }
 
 func appendTelegramLambda(api *sparta.API, lambdaFunctions []*sparta.LambdaAWSInfo) []*sparta.LambdaAWSInfo {
+	envs := make(map[string]*gocf.StringExpr)
+	envs["BOT_TELEGRAMID"] = &gocf.StringExpr{Literal: telegramID}
+	envs["BOT_UNSPLASHID"] = &gocf.StringExpr{Literal: unsplashID}
+
 	loptions := &sparta.LambdaFunctionOptions{
-		Timeout: 10,
+		Timeout:     10,
+		Environment: envs,
 	}
+
 	lambdaFn := sparta.NewLambda(sparta.IAMRoleDefinition{}, echoTelegram, loptions)
 	apiGatewayResource, _ := api.NewResource("/v1/bot", lambdaFn)
 	apiGatewayResource.NewMethod(http.MethodPost, http.StatusCreated)
@@ -105,7 +113,10 @@ func spartaLambdaData(api *sparta.API) []*sparta.LambdaAWSInfo {
 
 func main() {
 
-	parseConfig()
+	err := parseConfig()
+	if err != nil {
+		log.Panic("Error parsing config ", err.Error())
+	}
 
 	stage := sparta.NewStage("prod")
 	apiGateway := sparta.NewAPIGateway("MySpartaApi", stage)
