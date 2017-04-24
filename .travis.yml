@@ -5,7 +5,6 @@ go:
   - tip
 os:
   - linux
-  - osx
 before_install:
   - GLIDE_OS_ARCH=`go env GOHOSTOS`-`go env GOHOSTARCH`
   - GLIDE_TAG=$(curl -s https://glide.sh/version)
