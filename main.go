@@ -5,6 +5,7 @@ import (
 	"errors"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/Sirupsen/logrus"
 	gocf "github.com/crewjam/go-cloudformation"
@@ -13,6 +14,8 @@ import (
 	"github.com/tidwall/gjson"
 	"gopkg.in/telegram-bot-api.v4"
 )
+
+const appName = "UnsplashTelegramBot"
 
 var unsplashID string
 var telegramID string
@@ -118,11 +121,26 @@ func main() {
 		log.Panic("Error parsing config ", err.Error())
 	}
 
-	stage := sparta.NewStage("prod")
-	apiGateway := sparta.NewAPIGateway("UnsplashTelegramBot", stage)
+	// Get --tags options
+	parseErrors := sparta.ParseOptions(nil)
+	if parseErrors != nil {
+		os.Exit(2)
+	}
 
-	stackName := "UnsplashTelegramBot"
-	sparta.Main(stackName,
+	var StackName string
+
+	// If --tags is production name -Production else use -Devel
+	// for separate environments
+	if sparta.OptionsGlobal.BuildTags == "production" {
+		StackName = appName + "-Production"
+	} else {
+		StackName = appName + "-Devel"
+	}
+
+	stage := sparta.NewStage("prod")
+	apiGateway := sparta.NewAPIGateway(StackName, stage)
+
+	sparta.Main(StackName,
 		"Unsplash Telegram Bot",
 		spartaLambdaData(apiGateway),
 		apiGateway,
