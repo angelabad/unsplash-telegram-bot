@@ -1,4 +1,4 @@
 vendor/
 .sparta/
-config.json
+config.json*
 unsplash-telegram-bot
