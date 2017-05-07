@@ -1,5 +1,5 @@
 hash: d81e00c4bee27b1bcb01208854d04f2995bfaecb3cf5e32c97af3d2be394dfb2
-updated: 2017-04-22T09:11:23.61596456+02:00
+updated: 2017-05-07T18:28:01.924371325+02:00
 imports:
 - name: github.com/asaskevich/govalidator
   version: 2c14e1cca90af49b3b21fe2d7aaa8cc7f9da2ff8
@@ -72,7 +72,7 @@ imports:
 - name: github.com/mweagle/cloudformationresources
   version: e567068bb6d79d69e0a98a73f477f5638c9db27e
 - name: github.com/mweagle/Sparta
-  version: d8a3ac44866ecad40d835dc1f9be729fb5606b08
+  version: 7de9afd46a709632c2e86457dfceab13ae44031b
   subpackages:
   - aws
   - aws/cloudformation
