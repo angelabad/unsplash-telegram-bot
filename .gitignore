@@ -2,3 +2,4 @@ vendor/
 .sparta/
 config.json*
 unsplash-telegram-bot
+.idea/
