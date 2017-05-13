@@ -46,3 +46,21 @@ func searchImages(query string, logger *logrus.Logger) ([]Photo, error) {
 
 	return photos, nil
 }
+
+func getFeaturedImages(logger *logrus.Logger) ([]Photo, error) {
+	var photos []Photo
+
+	resty.SetHeader("Authorization", "Client-ID "+unsplashID)
+	resty.SetHeader("Accept-Version", "v1")
+	resp, err := resty.R().
+		Get("https://api.unsplash.com/photos/curated")
+	if err != nil {
+		return photos, err
+	}
+
+	if err = json.Unmarshal(resp.Body(), &photos); err != nil {
+		return photos, err
+	}
+
+	return photos, nil
+}
