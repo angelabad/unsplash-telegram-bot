@@ -1,0 +1,67 @@
+{
+  "context" : {},
+  "event": {
+    "method":"POST",
+    "body": {
+      "update_id":766397041,
+      "message":{
+        "message_id":31,
+        "from":{
+          "id":13102088,
+          "first_name":"Angel",
+          "last_name":"Abad",
+          "username":"angelabad"
+        },
+        "chat":{
+          "id":13102088,
+          "first_name":"Angel",
+          "last_name":"Abad",
+          "username":"angelabad",
+          "type":"private"
+        },
+        "date":1491228881,
+        "text":"/featured"
+      }
+    },
+    "headers":{
+      "Accept-Encoding":"gzip, deflate",
+      "CloudFront-Forwarded-Proto":"https",
+      "CloudFront-Is-Desktop-Viewer":"true",
+      "CloudFront-Is-Mobile-Viewer":"false",
+      "CloudFront-Is-SmartTV-Viewer":"false",
+      "CloudFront-Is-Tablet-Viewer":"false",
+      "CloudFront-Viewer-Country":"GB",
+      "Content-Type":"application/json",
+      "Host":"jz7dav7e85.execute-api.us-west-2.amazonaws.com",
+      "Via":"1.1 7f43afdd7e6d9ba0ebc0701aab572252.cloudfront.net (CloudFront)",
+      "X-Amz-Cf-Id":"3oDHpWSPFvc0eXtbewlRzHXnShsYRG8JG1lSBoapX7qYja7R4PUv-Q==",
+      "X-Amzn-Trace-Id":"Root=1-58e258d1-7cc9bd266bc85b1841f1ba18",
+      "X-Forwarded-For":"149.154.167.216,54.240.156.58",
+      "X-Forwarded-Port":"443",
+      "X-Forwarded-Proto":"https"
+    },
+    "queryParams":{},
+    "pathParams":{},
+    "context":{
+      "apiId":"jz7dav7e85",
+      "method":"POST",
+      "requestId":"e0e3f4c1-1877-11e7-ba07-d9ffb652d886",
+      "resourceId":"fes21r",
+      "resourcePath":"/echo",
+      "stage":"prod",
+      "identity":{
+        "accountId":"",
+        "apiKey":"",
+        "caller":"",
+        "cognitoAuthenticationProvider":"",
+        "cognitoAuthenticationType":"",
+        "cognitoIdentityId":"",
+        "cognitoIdentityPoolId":"",
+        "sourceIp":"149.154.167.216",
+        "user":"",
+        "userAgent":"",
+        "userArn":""
+      }
+    }
+  }
+}

@@ -69,6 +69,24 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 			logger.Panic("ERROR: ", err.Error())
 		}
 		sendPhoto(&message, logger, photo)
+	case "featured":
+		logger.Info("Featured click")
+		photos, err := getFeaturedImages(logger)
+		if err != nil {
+			logger.Panic("ERROR: ", err.Error())
+		}
+
+		if len(photos) == 0 {
+			logger.Info("There is no photos")
+		} else {
+			//TODO: Only get 5 images
+			for v := 0; v < len(photos); v++ {
+				sendPhoto(&message, logger, photos[v])
+				if v == 4 {
+					break
+				}
+			}
+		}
 	case "search":
 		logger.Info("Search: ", message.CommandArguments())
 		photos, err := searchImages(message.CommandArguments(), logger)
