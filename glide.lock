@@ -1,10 +1,10 @@
 hash: d81e00c4bee27b1bcb01208854d04f2995bfaecb3cf5e32c97af3d2be394dfb2
-updated: 2017-05-07T18:28:01.924371325+02:00
+updated: 2017-05-29T08:31:54.891581512+02:00
 imports:
 - name: github.com/asaskevich/govalidator
-  version: 2c14e1cca90af49b3b21fe2d7aaa8cc7f9da2ff8
+  version: 4918b99a7cb949bb295f3c7bbaf24b577d806e35
 - name: github.com/aws/aws-sdk-go
-  version: 40bc7761a9f06daa574d20f2ad5454db02a05953
+  version: 9f8b24cb7c7701c78150869d906711a2e7184bc0
   subpackages:
   - aws
   - aws/awserr
@@ -72,7 +72,7 @@ imports:
 - name: github.com/mweagle/cloudformationresources
   version: e567068bb6d79d69e0a98a73f477f5638c9db27e
 - name: github.com/mweagle/Sparta
-  version: 7de9afd46a709632c2e86457dfceab13ae44031b
+  version: af919a9abf6f6e9a9909e871d726ca3fbbdf2361
   subpackages:
   - aws
   - aws/cloudformation
@@ -120,7 +120,7 @@ imports:
   - transform
   - unicode/norm
 - name: gopkg.in/resty.v0
-  version: c45c7bcc0000d1a9ac1b119b2e6043c6540eedea
+  version: 7a8134d8718193eb857994adee49d73a302e7718
 - name: gopkg.in/telegram-bot-api.v4
   version: 0a57807db79efce7f6719fbb2c0e0f83fda79aec
 - name: gopkg.in/yaml.v2
