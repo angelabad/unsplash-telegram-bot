@@ -1,0 +1,4 @@
+random - Get random image
+featured - Get featured images
+latest - Get latest images
+search - Search images
