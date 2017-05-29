@@ -87,6 +87,16 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 				}
 			}
 		}
+	case "latest":
+		logger.Info("Latest click")
+		photos, err := getLatestImages(logger)
+		if err != nil {
+			logger.Panic("ERROR: ", err.Error())
+		}
+
+		for _, photo := range photos {
+			sendPhoto(&message, logger, photo)
+		}
 	case "search":
 		logger.Info("Search: ", message.CommandArguments())
 		photos, err := searchImages(message.CommandArguments(), logger)
@@ -95,14 +105,9 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 		}
 		if len(photos) == 0 {
 			logger.Info("There is no photos")
-		} else {
-			//TODO: Only get 3 images
-			for v := 0; v < len(photos); v++ {
-				sendPhoto(&message, logger, photos[v])
-				if v == 2 {
-					break
-				}
-			}
+		}
+		for _, photo := range photos {
+			sendPhoto(&message, logger, photo)
 		}
 	default:
 		logger.Info("Without command - exiting")

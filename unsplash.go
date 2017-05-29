@@ -32,8 +32,12 @@ func searchImages(query string, logger *logrus.Logger) ([]Photo, error) {
 
 	resty.SetHeader("Authorization", "Client-ID "+unsplashID)
 	resty.SetHeader("Accept-Version", "v1")
+	resty.SetQueryParams(map[string]string{
+		"query":    query,
+		"page":     "1",
+		"per_page": "5",
+	})
 	resp, err := resty.R().
-		SetQueryParam("query", query).
 		Get("https://api.unsplash.com/search/photos")
 	if err != nil {
 		return photos, err
@@ -52,8 +56,36 @@ func getFeaturedImages(logger *logrus.Logger) ([]Photo, error) {
 
 	resty.SetHeader("Authorization", "Client-ID "+unsplashID)
 	resty.SetHeader("Accept-Version", "v1")
+	resty.SetQueryParams(map[string]string{
+		"page":     "1",
+		"per_page": "5",
+		"order_by": "popular",
+	})
 	resp, err := resty.R().
-		Get("https://api.unsplash.com/photos/curated")
+		Get("https://api.unsplash.com/photos")
+	if err != nil {
+		return photos, err
+	}
+
+	if err = json.Unmarshal(resp.Body(), &photos); err != nil {
+		return photos, err
+	}
+
+	return photos, nil
+}
+
+func getLatestImages(logger *logrus.Logger) ([]Photo, error) {
+	var photos []Photo
+
+	resty.SetHeader("Authorization", "Client-ID "+unsplashID)
+	resty.SetHeader("Accept-Version", "v1")
+	resty.SetQueryParams(map[string]string{
+		"page":     "1",
+		"per_page": "5",
+		"order_by": "latest",
+	})
+	resp, err := resty.R().
+		Get("https://api.unsplash.com/photos")
 	if err != nil {
 		return photos, err
 	}

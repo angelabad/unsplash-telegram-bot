@@ -36,3 +36,23 @@ func TestSearchImages(t *testing.T) {
 		t.Error("Result is not a Photo objects slice")
 	}
 }
+
+func TestGetFeaturedImages(t *testing.T) {
+	photos, err := getFeaturedImages(logger)
+	if err != nil {
+		t.Error("Connection error: ", err.Error())
+	}
+	if reflect.TypeOf(photos).String() != "[]main.Photo" {
+		t.Error("Result is not a Photo objects slice")
+	}
+}
+
+func TestGetLatestImages(t *testing.T) {
+	photos, err := getLatestImages(logger)
+	if err != nil {
+		t.Error("Connection error: ", err.Error())
+	}
+	if reflect.TypeOf(photos).String() != "[]main.Photo" {
+		t.Error("Result is not a Photo objects slice")
+	}
+}
