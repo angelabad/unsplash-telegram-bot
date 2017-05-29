@@ -78,14 +78,9 @@ func echoTelegram(event *json.RawMessage, context *sparta.LambdaContext, w http.
 
 		if len(photos) == 0 {
 			logger.Info("There is no photos")
-		} else {
-			//TODO: Only get 5 images
-			for v := 0; v < len(photos); v++ {
-				sendPhoto(&message, logger, photos[v])
-				if v == 4 {
-					break
-				}
-			}
+		}
+		for _, photo := range photos {
+			sendPhoto(&message, logger, photo)
 		}
 	case "latest":
 		logger.Info("Latest click")
