@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/Sirupsen/logrus"
-	gocf "github.com/crewjam/go-cloudformation"
+	gocf "github.com/mweagle/go-cloudformation"
 	sparta "github.com/mweagle/Sparta"
 	"github.com/spf13/viper"
 	"github.com/tidwall/gjson"
