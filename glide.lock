@@ -1,5 +1,5 @@
-hash: d81e00c4bee27b1bcb01208854d04f2995bfaecb3cf5e32c97af3d2be394dfb2
-updated: 2017-05-29T08:31:54.891581512+02:00
+hash: 65f30a747f44b3042bdc8e2af0daee8eae754b7e92bf472a00184a6c69d2b135
+updated: 2017-06-21T10:43:55.339786925+02:00
 imports:
 - name: github.com/asaskevich/govalidator
   version: 4918b99a7cb949bb295f3c7bbaf24b577d806e35
@@ -50,6 +50,12 @@ imports:
   version: 4da3e2cfbabc9f751898f250b49f2439785783a1
 - name: github.com/go-ini/ini
   version: e7fea39b01aea8d5671f6858f0532f56e8bff3a5
+- name: github.com/go-playground/locales
+  version: 1e5f1161c6416a5ff48840eb8724a394e48cc534
+  subpackages:
+  - currency
+- name: github.com/go-playground/universal-translator
+  version: 71201497bace774495daed26a3874fd339e0b538
 - name: github.com/hashicorp/hcl
   version: 7fa7fff964d035e8a162cce3a164b3ad02ad651b
   subpackages:
@@ -70,9 +76,11 @@ imports:
 - name: github.com/mitchellh/mapstructure
   version: 53818660ed4955e899c0bcafa97299a388bd7c8e
 - name: github.com/mweagle/cloudformationresources
-  version: e567068bb6d79d69e0a98a73f477f5638c9db27e
+  version: a2efb8eb75fa54dca84d6e63915d4c2cb0210618 
+- name: github.com/mweagle/go-cloudformation
+  version: 087533ba568c64eef51ab4c3f5c6b8e02dba8ee1
 - name: github.com/mweagle/Sparta
-  version: af919a9abf6f6e9a9909e871d726ca3fbbdf2361
+  version: 33611109f91d591349438e3c1457b65e3de48033
   subpackages:
   - aws
   - aws/cloudformation
@@ -85,7 +93,7 @@ imports:
 - name: github.com/pelletier/go-toml
   version: fe206efb84b2bc8e8cfafe6b4c1826622be969e3
 - name: github.com/Sirupsen/logrus
-  version: ba1b36c82c5e05c4f912a88eab0dcd91a171688f
+  version: 202f25545ea4cf9b191ff7f846df5d87c9382c2b
 - name: github.com/spf13/afero
   version: 9be650865eab0c12963d8753212f4f9c66cdcf12
   subpackages:
@@ -119,6 +127,8 @@ imports:
   subpackages:
   - transform
   - unicode/norm
+- name: gopkg.in/go-playground/validator.v9
+  version: fb68f39656d7ebf8aa339ad4917aa0c260ecc237
 - name: gopkg.in/resty.v0
   version: 7a8134d8718193eb857994adee49d73a302e7718
 - name: gopkg.in/telegram-bot-api.v4

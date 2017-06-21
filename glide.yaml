@@ -1,9 +1,9 @@
-package: github.com/angelabad/unsplash-telegram-bot 
+package: github.com/angelabad/unsplash-telegram-bot
 import:
 - package: github.com/Sirupsen/logrus
-  version: ^0.11.5
+  version: ^1.0.0
 - package: github.com/mweagle/Sparta
-  version: ^0.11.0
+  version: ^0.12.1
 - package: github.com/spf13/viper
 - package: github.com/tidwall/gjson
 - package: gopkg.in/resty.v0
