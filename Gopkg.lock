@@ -15,7 +15,7 @@
 
 [[projects]]
   name = "github.com/aws/aws-sdk-go"
-  packages = ["aws","aws/awserr","aws/awsutil","aws/client","aws/client/metadata","aws/corehandlers","aws/credentials","aws/credentials/ec2rolecreds","aws/credentials/endpointcreds","aws/credentials/stscreds","aws/defaults","aws/ec2metadata","aws/endpoints","aws/request","aws/session","aws/signer/v4","internal/shareddefaults","private/protocol","private/protocol/json/jsonutil","private/protocol/jsonrpc","private/protocol/query","private/protocol/query/queryutil","private/protocol/rest","private/protocol/restjson","private/protocol/restxml","private/protocol/xml/xmlutil","service/apigateway","service/cloudformation","service/cloudwatchlogs","service/dynamodb","service/ecr","service/iam","service/lambda","service/s3","service/s3/s3iface","service/s3/s3manager","service/ses","service/sns","service/sts"]
+  packages = ["aws","aws/awserr","aws/awsutil","aws/client","aws/client/metadata","aws/corehandlers","aws/credentials","aws/credentials/ec2rolecreds","aws/credentials/endpointcreds","aws/credentials/stscreds","aws/defaults","aws/ec2metadata","aws/endpoints","aws/request","aws/session","aws/signer/v4","internal/shareddefaults","private/protocol","private/protocol/json/jsonutil","private/protocol/jsonrpc","private/protocol/query","private/protocol/query/queryutil","private/protocol/rest","private/protocol/restjson","private/protocol/restxml","private/protocol/xml/xmlutil","service/apigateway","service/cloudformation","service/cloudwatch","service/cloudwatchlogs","service/dynamodb","service/ecr","service/iam","service/lambda","service/s3","service/s3/s3iface","service/s3/s3manager","service/ses","service/sns","service/sts"]
   revision = "5e436e55ac5eddc739f26a2a209b3f4248ee8e0e"
   version = "v1.10.18"
 
@@ -75,7 +75,7 @@
 
 [[projects]]
   name = "github.com/mweagle/Sparta"
-  packages = [".","aws","aws/cloudformation","aws/dynamodb","aws/iam","aws/s3","zip"]
+  packages = [".","aws","aws/cloudformation","aws/dynamodb","aws/iam","aws/s3","cgo","zip"]
   revision = "8fca3c40b41d3d76c895149bfa929317136e8618"
   version = "0.13.2"
 
@@ -176,6 +176,12 @@
   revision = "836efe42bb4aa16aaa17b9c155d8813d336ed720"
 
 [[projects]]
+  branch = "master"
+  name = "golang.org/x/tools"
+  packages = ["go/ast/astutil"]
+  revision = "ac1e4b1998e6a311e006d9629b9283295dee36a3"
+
+[[projects]]
   name = "gopkg.in/go-playground/validator.v9"
   packages = ["."]
   revision = "fb68f39656d7ebf8aa339ad4917aa0c260ecc237"
@@ -202,6 +208,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c5aa63e74f68c195a34d58009aac0085c6d2b677e1668ed7546bca44e34331e3"
+  inputs-digest = "1ca73371917d95e14a001326c4eea422fe91cbd1c925ed7e7a01c6d70a4b93cb"
   solver-name = "gps-cdcl"
   solver-version = 1
