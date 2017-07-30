@@ -8,8 +8,9 @@ import (
 	"os"
 
 	"github.com/Sirupsen/logrus"
-	gocf "github.com/mweagle/go-cloudformation"
 	sparta "github.com/mweagle/Sparta"
+	spartaCGO "github.com/mweagle/Sparta/cgo"
+	gocf "github.com/mweagle/go-cloudformation"
 	"github.com/spf13/viper"
 	"github.com/tidwall/gjson"
 	"gopkg.in/telegram-bot-api.v4"
@@ -158,7 +159,7 @@ func main() {
 	stage := sparta.NewStage("prod")
 	apiGateway := sparta.NewAPIGateway(StackName, stage)
 
-	sparta.Main(StackName,
+	spartaCGO.Main(StackName,
 		"Unsplash Telegram Bot",
 		spartaLambdaData(apiGateway),
 		apiGateway,
