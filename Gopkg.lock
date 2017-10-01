@@ -4,20 +4,20 @@
 [[projects]]
   name = "github.com/Sirupsen/logrus"
   packages = ["."]
-  revision = "a3f95b5c423586578a4e099b11a46c2479628cac"
-  version = "1.0.2"
+  revision = "f006c2ac4710855cf0f916dd6b77acf6b048dc6e"
+  version = "v1.0.3"
 
 [[projects]]
   name = "github.com/asaskevich/govalidator"
   packages = ["."]
-  revision = "4918b99a7cb949bb295f3c7bbaf24b577d806e35"
-  version = "v6"
+  revision = "73945b6115bfbbcc57d89b7316e28109364124e1"
+  version = "v7"
 
 [[projects]]
   name = "github.com/aws/aws-sdk-go"
   packages = ["aws","aws/awserr","aws/awsutil","aws/client","aws/client/metadata","aws/corehandlers","aws/credentials","aws/credentials/ec2rolecreds","aws/credentials/endpointcreds","aws/credentials/stscreds","aws/defaults","aws/ec2metadata","aws/endpoints","aws/request","aws/session","aws/signer/v4","internal/shareddefaults","private/protocol","private/protocol/json/jsonutil","private/protocol/jsonrpc","private/protocol/query","private/protocol/query/queryutil","private/protocol/rest","private/protocol/restjson","private/protocol/restxml","private/protocol/xml/xmlutil","service/apigateway","service/cloudformation","service/cloudwatchlogs","service/dynamodb","service/ecr","service/iam","service/lambda","service/s3","service/s3/s3iface","service/s3/s3manager","service/ses","service/sns","service/sts"]
-  revision = "5e436e55ac5eddc739f26a2a209b3f4248ee8e0e"
-  version = "v1.10.18"
+  revision = "6198197eabb9bb93346ae204d79ac2225e44cf05"
+  version = "v1.12.2"
 
 [[projects]]
   name = "github.com/fsnotify/fsnotify"
@@ -28,8 +28,8 @@
 [[projects]]
   name = "github.com/go-ini/ini"
   packages = ["."]
-  revision = "d3de07a94d22b4a0972deb4b96d790c2c0ce8333"
-  version = "v1.28.0"
+  revision = "20b96f641a5ea98f2f8619ff4f3e061cff4833bd"
+  version = "v1.28.2"
 
 [[projects]]
   name = "github.com/go-playground/locales"
@@ -45,21 +45,26 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/hashicorp/hcl"
-  packages = [".","hcl/ast","hcl/parser","hcl/scanner","hcl/strconv","hcl/token","json/parser","json/scanner","json/token"]
-  revision = "392dba7d905ed5d04a5794ba89f558b27e2ba1ca"
+  name = "github.com/golang/protobuf"
+  packages = ["jsonpb","proto","ptypes/struct"]
+  revision = "130e6b02ab059e7b717a096f397c5b60111cae74"
 
 [[projects]]
   branch = "master"
+  name = "github.com/hashicorp/hcl"
+  packages = [".","hcl/ast","hcl/parser","hcl/scanner","hcl/strconv","hcl/token","json/parser","json/scanner","json/token"]
+  revision = "68e816d1c783414e79bc65b3994d9ab6b0a722ab"
+
+[[projects]]
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
 
 [[projects]]
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
-  revision = "3433f3ea46d9f8019119e7dd41274e112a2359a9"
-  version = "0.2.2"
+  revision = "0b12d6b5"
 
 [[projects]]
   name = "github.com/magiconair/properties"
@@ -75,9 +80,9 @@
 
 [[projects]]
   name = "github.com/mweagle/Sparta"
-  packages = [".","aws","aws/cloudformation","aws/dynamodb","aws/iam","aws/s3","zip"]
-  revision = "8fca3c40b41d3d76c895149bfa929317136e8618"
-  version = "0.13.2"
+  packages = [".","aws","aws/cloudformation","aws/dynamodb","aws/iam","aws/s3","proxy","zip"]
+  revision = "1dc88835dbfc372ef7f3c9a3240b4817db220eea"
+  version = "0.20.0"
 
 [[projects]]
   branch = "master"
@@ -89,7 +94,7 @@
   branch = "master"
   name = "github.com/mweagle/go-cloudformation"
   packages = ["."]
-  revision = "f9851eb78325a0e116fa5c9a0c9b42e08471e4d7"
+  revision = "bf4fe30f1f5efdb2748a86bc712375017e206c9d"
 
 [[projects]]
   name = "github.com/pelletier/go-buffruneio"
@@ -107,7 +112,7 @@
   branch = "master"
   name = "github.com/spf13/afero"
   packages = [".","mem"]
-  revision = "9be650865eab0c12963d8753212f4f9c66cdcf12"
+  revision = "ee1bd8ee15a1306d1f9201acc41ef39cd9f99a1b"
 
 [[projects]]
   name = "github.com/spf13/cast"
@@ -119,25 +124,25 @@
   branch = "master"
   name = "github.com/spf13/cobra"
   packages = ["."]
-  revision = "c46add8a652801b61513ad36c56759f302fbb028"
+  revision = "e5f66de850af3302fbe378c8acded2b0fa55472c"
 
 [[projects]]
   branch = "master"
   name = "github.com/spf13/jwalterweatherman"
   packages = ["."]
-  revision = "0efa5202c04663c757d84f90f5219c1250baf94f"
+  revision = "12bd96e66386c1960ab0f74ced1362f66f552f7b"
 
 [[projects]]
-  branch = "master"
   name = "github.com/spf13/pflag"
   packages = ["."]
   revision = "e57e3eeb33f795204c1ca35f56c44f83227c6e66"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
   name = "github.com/spf13/viper"
   packages = ["."]
-  revision = "c1de95864d73a5465492829d7cb2dd422b19ac96"
+  revision = "d9cca5ef33035202efb1586825bdbb15ff9ec3ba"
 
 [[projects]]
   name = "github.com/technoweenie/multipartstreamer"
@@ -146,10 +151,10 @@
   version = "v1.0.1"
 
 [[projects]]
-  branch = "master"
   name = "github.com/tidwall/gjson"
   packages = ["."]
-  revision = "c784c417818f59d6597274642d8ac1d09efc9b01"
+  revision = "5a69e67cfd8f6f9b0044ed49f5079d0eeed28653"
+  version = "v1.0.1"
 
 [[projects]]
   branch = "master"
@@ -159,27 +164,39 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/zcalusic/sysinfo"
+  packages = ["."]
+  revision = "cb0d01598524bd7f53cf88be55b5520b23d36818"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  revision = "9419663f5a44be8b34ca85f08abc5fe1be11f8a3"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/net"
   packages = ["idna","publicsuffix"]
-  revision = "f01ecb60fe3835d80d9a0b7b2bf24b228c89260e"
+  revision = "0a9397675ba34b2845f758fe3cd68828369c6517"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
-  packages = ["unix"]
-  revision = "abf9c25f54453410d0c6668e519582a9e1115027"
+  packages = ["unix","windows"]
+  revision = "314a259e304ff91bd6985da2a7149bbf91237993"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/text"
-  packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
-  revision = "836efe42bb4aa16aaa17b9c155d8813d336ed720"
+  packages = ["collate","collate/build","internal/colltab","internal/gen","internal/tag","internal/triegen","internal/ucd","language","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  revision = "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
 
 [[projects]]
   name = "gopkg.in/go-playground/validator.v9"
   packages = ["."]
-  revision = "fb68f39656d7ebf8aa339ad4917aa0c260ecc237"
-  version = "v9.4.0"
+  revision = "a021b2ec9a8a8bb970f3f15bc42617cb520e8a64"
+  version = "v9.7.0"
 
 [[projects]]
   name = "gopkg.in/resty.v0"
@@ -197,11 +214,11 @@
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "3b4ad1db5b2a649883ff3782f5f9f6fb52be71af"
+  revision = "eb3733d160e74a9c7e442f435eb3bea458e1d19f"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c5aa63e74f68c195a34d58009aac0085c6d2b677e1668ed7546bca44e34331e3"
+  inputs-digest = "83ea8208ddbb041fec03b73a43a74220d2fff0ad6c23d07e4c9a81baa84da301"
   solver-name = "gps-cdcl"
   solver-version = 1
