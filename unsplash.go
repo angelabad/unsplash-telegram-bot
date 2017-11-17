@@ -44,11 +44,9 @@ func searchImages(query string, logger *logrus.Logger) ([]Photo, error) {
 	}
 
 	results := gjson.Get(string(resp.Body()), "results")
-	if err = json.Unmarshal([]byte(results.String()), &photos); err != nil {
-		return photos, err
-	}
+	err = json.Unmarshal([]byte(results.String()), &photos)
 
-	return photos, nil
+	return photos, err
 }
 
 func getFeaturedImages(logger *logrus.Logger) ([]Photo, error) {

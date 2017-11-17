@@ -8,11 +8,8 @@ import (
 
 func getBot() (*tgbotapi.BotAPI, error) {
 	bot, err := tgbotapi.NewBotAPI(telegramID)
-	if err != nil {
-		return bot, err
-	}
 
-	return bot, nil
+	return bot, err
 }
 
 func sendPhoto(message *tgbotapi.Message, logger *logrus.Logger, photo Photo) error {
@@ -40,11 +37,8 @@ func sendPhoto(message *tgbotapi.Message, logger *logrus.Logger, photo Photo) er
 	inlineKeyboardMarkup := tgbotapi.NewInlineKeyboardMarkup(row1, row2)
 	msgPhoto.ReplyMarkup = &inlineKeyboardMarkup
 	_, err = bot.Send(msgPhoto)
-	if err != nil {
-		return err
-	}
 
-	return nil
+	return err
 }
 
 func sendTxt(message *tgbotapi.Message, logger *logrus.Logger, txt string) error {
@@ -55,11 +49,8 @@ func sendTxt(message *tgbotapi.Message, logger *logrus.Logger, txt string) error
 	msgTxt := tgbotapi.NewMessage(message.Chat.ID, txt)
 	msgTxt.DisableWebPagePreview = true
 	_, err = bot.Send(msgTxt)
-	if err != nil {
-		return err
-	}
 
-	return nil
+	return err
 }
 
 func sendHTML(message *tgbotapi.Message, logger *logrus.Logger, txt string) error {
@@ -71,9 +62,6 @@ func sendHTML(message *tgbotapi.Message, logger *logrus.Logger, txt string) erro
 	msgTxt.ParseMode = "HTML"
 	msgTxt.DisableWebPagePreview = true
 	_, err = bot.Send(msgTxt)
-	if err != nil {
-		return err
-	}
 
-	return nil
+	return err
 }
