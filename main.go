@@ -5,7 +5,6 @@ import (
 	"errors"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/Sirupsen/logrus"
 	sparta "github.com/mweagle/Sparta"
@@ -22,16 +21,16 @@ var unsplashID string
 var telegramID string
 
 func parseConfig() error {
-	viper.SetConfigName("config")
-	viper.AddConfigPath(".")
-	viper.ReadInConfig()
-	//err := viper.ReadInConfig()
-	//if err != nil {
-	//	logger.Printf("Unable to open config file: %s, using env vars", err.Error())
-	//}
 	viper.SetEnvPrefix("bot")
 	viper.BindEnv("unsplashID")
 	viper.BindEnv("telegramID")
+
+	viper.SetConfigName("config")
+	viper.AddConfigPath(".")
+	err := viper.ReadInConfig()
+	if err != nil {
+		log.Printf("Unable to open config file: %s, using env vars", err.Error())
+	}
 
 	unsplashID = viper.GetString("unsplashID")
 	telegramID = viper.GetString("telegramID")
@@ -140,16 +139,11 @@ func main() {
 		log.Panic("Error parsing config ", err.Error())
 	}
 
-	// Get --tags options
-	parseErrors := sparta.ParseOptions(nil)
-	if parseErrors != nil {
-		os.Exit(2)
-	}
-
 	var StackName string
 
 	// If --tags is production name -Production else use -Devel
 	// for separate environments
+	sparta.ParseOptions(nil)
 	if sparta.OptionsGlobal.BuildTags == "production" {
 		StackName = appName + "-Production"
 	} else {
