@@ -1,0 +1,6 @@
+random - Get random image
+featured - Get featured images
+latest - Get latest images
+search - Search images
+
+curl -X POST https://api.telegram.org/botBOTTOKEN/setWebhook -F "url=https://7libi0xd0k.execute-api.us-west-2.amazonaws.com/prod/v1/bot"
